@@ -1,0 +1,17 @@
+# Versions the shipped model was trained and tested under.
+#
+# Python 3.14.4.  pip cannot pin the interpreter from this file; if you use a
+# different one, note that pandas 3.x and numpy 2.4 need a recent Python, and
+# that an unpickled model is only trustworthy under the scikit-learn below.
+#
+# scikit-learn IS PINNED EXACTLY ON PURPOSE.  models/model_final.joblib is a
+# pickle of a fitted estimator; unpickling across scikit-learn minor versions
+# may warn, fail, or -- worst case -- load with changed internals and predict
+# silently differently.  If you must use another version, retrain rather than
+# trusting the shipped pickle.
+scikit-learn==1.8.0
+numpy==2.4.4
+pandas==3.0.2
+joblib==1.5.3
+biopython==1.86
+freesasa==2.2.1
